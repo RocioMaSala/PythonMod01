@@ -1,14 +1,15 @@
 
-def ft_garden_data():
-    class Plant:
-        def __init__(self, name, height, age):
-            self.name = name
-            self.height = height
-            self.age = age
+class Plant:
+    def __init__(self, name: str, height: float, age: int)-> None:
+        self.name = name
+        self.height = height
+        self.age = age
 
-        def show(self):
-            print(f"{self.name}: {self.height}cm, {self.age} days old")
+    def show(self)-> None:
+        print(f"{self.name}: {self.height}cm, {self.age} days old")
 
+
+def ft_garden_data()-> None:
     print("=== Garden Plant Registry ===")
 
     plant1 = Plant("Rose", 25, 30)
@@ -20,4 +21,5 @@ def ft_garden_data():
     plant3.show()
 
 
-ft_garden_data()
+if __name__ == "__main__":
+    ft_garden_data()

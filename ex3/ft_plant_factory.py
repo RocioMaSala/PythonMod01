@@ -1,16 +1,21 @@
 class Plant:
-    def __init__(self, name: str, height: float, age: int, growth_type: str) -> None:
+    def __init__(
+            self,
+            name: str,
+            height: float,
+            age: int,
+            growth_type: str) -> None:
         self.name = name
         self.height = height
         self.strtage = age
         self.totalgrowth: float = 0
         self.growth_type = growth_type
 
-    def show(self)-> None:
+    def show(self) -> None:
         h = self.height
         print(f"Created: {self.name}: {h:.1f}cm, {self.strtage} days old")
 
-    def grow(self)-> None:
+    def grow(self) -> None:
         if self.growth_type == "fast":
             growth = 0.8
         elif self.growth_type == "medium":

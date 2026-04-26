@@ -1,16 +1,18 @@
+#!/usr/bin/env python3
+
 class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
         self.height = height
         self.age = age
-        self.stats = self.statistics(self)
+        self.stats = self.Statistics(self)
 
     def show(self) -> None:
         h = self.height
         print(f"{self.name}: {h:.1f}cm, {self.age} days old")
         self.stats.total_show()
 
-    class statistics:
+    class Statistics:
         def __init__(self, plant) -> None:
             self.plant = plant
             self.grow_calls = 0
@@ -34,7 +36,7 @@ class Plant:
             print(f"[statistics for {self.plant.name}]")
             print(
                 f"Stats: {self.grow_calls} grow,"
-                f"{self.age_calls} age, {self.show_calls} show"
+                f" {self.age_calls} age, {self.show_calls} show"
             )
 
     @staticmethod
@@ -68,7 +70,7 @@ class Flower(Plant):
         self.bloomed = True
 
     def grow(self) -> None:
-        self.height = self.height + 7
+        self.height = self.height + 8
         self.stats.total_growth()
 
 
@@ -99,7 +101,7 @@ class Tree(Plant):
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
         self.shade = 0
-        self.stats = self.treestats(self)
+        self.stats = self.Treestats(self)
 
     def show(self) -> None:
         super().show()
@@ -115,7 +117,7 @@ class Tree(Plant):
             f"{self.trunk_diameter:.1f}cm wide."
         )
 
-    class treestats(Plant.statistics):
+    class Treestats(Plant.Statistics):
         def __init__(self, plant) -> None:
             super().__init__(plant)
 
@@ -145,8 +147,8 @@ def ft_garden_analytics() -> None:
     flower.show()
     disp_statistics(flower)
     flower.bloom()
-    flower.show()
     flower.grow()
+    flower.show()
     disp_statistics(flower)
     print()
 

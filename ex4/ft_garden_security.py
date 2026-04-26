@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 class Plant:
     def __init__(self, name: str, height: float, age: int, growth_type: str):
         self.name = name
@@ -53,7 +55,7 @@ class Plant:
         self.set_age(self.get_age() + 1)
 
 
-def ft_garden_security_system() -> None:
+def ft_garden_security() -> None:
     print("=== Garden Security System ===")
     plant = Plant("Rose", 15, 10, "medium")
     plant.show()
@@ -68,4 +70,4 @@ def ft_garden_security_system() -> None:
 
 
 if __name__ == "__main__":
-    ft_garden_security_system()
+    ft_garden_security()

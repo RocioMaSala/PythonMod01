@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 class Plant:
     def __init__(
             self,
@@ -32,8 +34,6 @@ class Plant:
 
 def ft_plant_growth() -> None:
     plant1 = Plant("Rose", 25, 30, "fast")
-# plant2 = Plant("Sunflower", 5, 10, "medium")
-# plant3 = Plant ("Cactus", 3, 45, "slow")
 
     print("=== Garden Plant Registry ===")
 

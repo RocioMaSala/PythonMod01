@@ -71,10 +71,10 @@ class Vegetable(Plant):
         print(f"Harvest season: {self._harvest_season}")
         print(f"Nutritional value: {self._nutritional_value}")
 
-    def vage(self, growth) -> None:
+    def vage(self, growth: int) -> None:
         self._age = self._age + growth
 
-    def grow(self, cm, growth) -> None:
+    def grow(self, cm: float, growth: int) -> None:
         self._height = self._height + cm
         self._nutritional_value = self._nutritional_value + growth
         print(f"[make {self._name.lower()} grow and age for {growth} days]")
